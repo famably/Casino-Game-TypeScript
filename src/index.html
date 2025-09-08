@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Pairs Game</title>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Match Pairs</h1>
+    
+    <!-- Game UI Elements -->
+    <div id="game-ui">
+      <div class="ui-row">
+        <div class="ui-item">
+          <span class="ui-label">BALANCE</span>
+          <span id="balance" class="ui-value">1000</span>
+        </div>
+        <div class="ui-item">
+          <span class="ui-label">WINNINGS</span>
+          <span id="winnings" class="ui-value">0</span>
+        </div>
+        <div class="ui-item">
+          <span class="ui-label">SAVED WINNINGS</span>
+          <span id="saved-winnings" class="ui-value">0</span>
+        </div>
+      </div>
+      
+      <div class="ui-row">
+        <div class="ui-item">
+          <span class="ui-label">HISTORY</span>
+          <div id="history" class="ui-value"></div>
+        </div>
+        <div class="ui-item">
+          <span class="ui-label">LOSE WIN</span>
+          <span id="lose-win" class="ui-value">LOSE/WIN</span>
+        </div>
+        <div class="ui-item">
+          <span class="ui-label">LAST CARD</span>
+          <span id="last-card" class="ui-value">?</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="stats">
+      <span id="attempts">Attempts: 0</span>
+      <button id="restart">Restart</button>
+    </div>
+    
+    <div id="game-board"></div>
+  </div>
+</body>
+</html>

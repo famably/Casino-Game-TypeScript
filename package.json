@@ -1,0 +1,22 @@
+{
+  "name": "match-pairs-game",
+  "version": "1.0.0",
+  "description": "A card matching game built with TypeScript",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "webpack serve --mode=development --open",
+    "start": "webpack serve --mode=development --open",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  }
+}
