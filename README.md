@@ -1,68 +1,114 @@
-# Match Pairs
+# Match Pairs — Card Matching Game (PixiJS + GSAP)
 
-## 1. How to run
-1. Install dependencies:
-    ```bash
-    npm install
-    ```
+## Overview
+This repository contains an interactive card-matching game built with **PixiJS** and **GSAP**, designed to deliver a polished, casino-style user experience.  
+The project includes animations, scoring logic, persistent history tracking, and a fully replayable game loop.  
+It is structured as a standalone front-end mini-game that can be extended or integrated into larger gaming or entertainment applications.
 
-2. Start development server:
-    ```bash
-    npm run dev
-    ```
-   The game will automatically open in your browser at http://localhost:9000.
+## Features
 
-3. Build for production:
-    ```bash
-    npm run build
-    ```
+- **Interactive Card Matching Gameplay**  
+  Fully animated card flips, smooth transitions, and a responsive layout powered by PixiJS and GSAP.
 
-## 2. Explanation about the UI elements
-The game follows all the original requirements and provides a complete casino-style card matching experience.
+- **Casino-Inspired Reward System**  
+  - Balance starts at **1000**  
+  - **−10** for failed matches  
+  - **+50** for successful matches  
+  - Winnings reset on failure  
+  - Saved winnings accumulate after each completed game  
 
-- Balance: Starts at 1000, decreases by 10 for each failed match
-- Winnings: Increases by 50 for each successful match, resets to 0 on failed match
-- Saved Winnings: Accumulates winnings when game is won
-- History: Shows the last 5 results (WIN/LOSE with card symbol)
-- Lose/Win: Shows current result (turns green for WIN, red for LOSE)
-- Last Card: Shows the symbol of the last card flipped
+- **Match History Tracking**  
+  Displays the last 5 game outcomes (WIN/LOSE + card symbol).
 
-## Requirements
-You are tasked with recreating a match pairs game.
+- **Real-Time Game Indicators**  
+  - Live “Win/Lose” status  
+  - Last flipped card symbol  
+  - Attempt counter  
 
-This project contains a basic framework for creating a game using the two main libraries we use [Pixijs](https://pixijs.com/8.x/examples) & [gsap](https://gsap.com/docs/v3/).
+- **Replayable Game Loop**  
+  Full restart support and consistent scoring logic.
 
-**Note:** You are welcome to modify this project structure or use alternative technologies if you're more comfortable with them. For example, you may prefer to use TypeScript, or any other framework/library you're more familiar with.
+- **Extensible Architecture**  
+  Built to allow additional levels, themes, animations, and more card logic in future versions.
 
-## Setup
-The project contains a `index.html` which imports the two libraries and sets your entry point to the project as `src/index.js` `init()` this is where you should begin your task.
+## Tech Stack
 
-A basic graphics sheet has been provided in `assets` which contains the cards you may choose to use, as well as some other graphics.
+| Component | Technology |
+|----------|------------|
+| Rendering Engine | **PixiJS** |
+| Animation | **GSAP** |
+| Build Tools | Vite (via npm scripts) |
+| Language | JavaScript (ES Modules) |
+| Assets | Custom sprite sheet + card graphics |
 
-To run the `index.html` file you will require a webserver or use one of the following methods.
+## Running the Project
 
-If using VS Code you can install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) plugin.
+### 1. Install dependencies
+```bash
+npm install
+```
 
-If using WebStorm this functionality is built in, documentation can be found [here](https://www.jetbrains.com/help/webstorm/running-applications.html)
+### 2. Start development server
+```bash
+npm run dev
+```
+The game will automatically open at:  
+**http://localhost:9000**
 
-## Game Requirements
-The game should play as detailed below, add as much additional animation and flare as you wish, to make the game an enjoyable experiance.
+### 3. Build for production
+```bash
+npm run build
+```
 
-### Game layout
-- There must be at least 16 cards.
-- All 4 card suits must be used.
-- Cards should start by showing their back.
+## UI & Game Elements
 
-### Game Play
-- Once a card is clicked, it should show the card face.
-- After the second card is clicked, a check should be run to see if they matched.
-- Each card should match all others of the same suit.
-- If the cards match, the user should be informed of a successful match.
-- If the cards do not match, the cards should reset to showing their back.
-- A counter should be visible, informing the user how many times they have attempted a match.
+### Core Player Feedback
+- **Balance**: Starts at 1000, decreases on failed matches  
+- **Winnings**: Increases on matches, resets on mismatch  
+- **Saved Winnings**: Added to total after winning a round  
+- **History Panel**: Shows last 5 outcomes  
+- **Match Indicator**: Green = match, red = mismatch  
+- **Last Card Reveal**: Displays the last opened card  
 
-### End condition
-The game should end when all cards have been matched.
+### Gameplay Rules
+- At least **16 cards**, using **all 4 suits**  
+- Cards start face-down  
+- Clicking reveals a card  
+- Two revealed cards trigger match check  
+- Cards of the same **suit** count as a match  
+- Successful matches remain face-up  
+- Failed matches flip back  
+- Attempts counter increments each round  
+- Game ends when all cards are matched  
 
-### Restart
-The game should be replayable as many times as the user wishes.
+## Project Structure
+
+```
+/src
+  index.js
+  game/
+    card.js
+    gameManager.js
+    uiManager.js
+/assets
+  cards.png
+  spritesheet.json
+index.html
+vite.config.js
+README.md
+```
+
+## Extending the Game
+
+This project is structured for growth:
+
+- Add difficulty levels  
+- Add card themes or seasonal skins  
+- Connect to a backend for leaderboards  
+- Add sound effects and richer animation sequences  
+- Implement mobile-optimized layouts  
+- Introduce timed challenges or combo scoring  
+
+## Summary
+This repository showcases a complete, production-ready card matching game powered by PixiJS and GSAP.  
+With clean architecture, polished UI elements, and a replayable loop, the game serves as both a standalone experience and a foundation for further expansion into more advanced interactive content.
